@@ -11,11 +11,11 @@
 | 复杂度 | `M` |
 | 阶段 | `P1` |
 | 复用度 | ★★★★☆（④共用） |
-| 资产形态 | 纯提示词（无运行时依赖） |
+| 资产形态 | 提示词 + Python 确定性脚本（`scripts/competitor-digest.py`，仅标准库） |
 
 ## 能力描述
 
-竞品动态→一句话异动
+竞品动态→一句话异动：把监控原始条目按「价格调整 / 新品上架 / 促销活动 / 流量投放」归类聚类，统计频次与店铺动作数；洞察须带 ≥2 条同向证据。脚本承担条目解析、归类、频次统计与产物落盘；共性洞察由模型完成。
 
 ## 输入规格
 
@@ -49,6 +49,20 @@
 | **Dify** | 新建应用 → 提示词编排 → 粘贴 `prompt.txt` |
 | **Claude** | 新建 Project → Instructions → 粘贴 `prompt.txt` |
 | **ChatGPT** | 新建 GPT → Instructions → 粘贴 `prompt.txt` |
+
+### 方式三：脚本实跑（确定性产物）
+
+```bash
+python scripts/competitor-digest.py --input input.json --outdir out
+python scripts/competitor-digest.py --demo
+```
+
+| 产物 | 内容 |
+|------|------|
+| `out/digest_clusters.csv` | 分组结果 |
+| `out/digest_shop_stats.csv` | 店铺动作频次 |
+| `out/digest_summary.json` | 机器可读结果 |
+| `out/digest_report.md` | 摘要报告 |
 
 ## 边界（不做的事）
 

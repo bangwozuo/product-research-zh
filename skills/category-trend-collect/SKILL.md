@@ -11,17 +11,18 @@
 | 复杂度 | `M` |
 | 阶段 | `P1` |
 | 复用度 | ★★★★☆ |
-| 资产形态 | 纯提示词（无运行时依赖） |
+| 资产形态 | 提示词 + Python 确定性脚本（`scripts/category-trend-collect.py`，仅标准库） |
 
 ## 能力描述
 
-热词/类目趋势结构化
+热词/类目趋势结构化：从用户粘贴的平台热词榜、海外社区热帖、短视频话题材料中抽取结构化条目，按环比阈值（缺省 +19%）与条数上限（缺省 8 条）筛选，交付可追溯清单。脚本承担结构化抽取、阈值比对、拦截/截断统计与产物落盘；业务解读由模型完成。
 
 ## 输入规格
 
 | 字段 | 类型 | 必填 | 说明 |
 |------|------|------|------|
-| `source` | string | ✅ | 数据来源（URL / 关键词 / 平台名） |
+| `source` | string | ✅ | 数据来源（URL / 关键词 / 平台名 / 粘贴材料全文） |
+| `scope` | string | ⬜ | 采集范围：时间窗口、条数上限（默认 8）、环比阈值（默认 +19%） |
 
 ## 输出规格
 
@@ -48,6 +49,19 @@
 | **Dify** | 新建应用 → 提示词编排 → 粘贴 `prompt.txt` |
 | **Claude** | 新建 Project → Instructions → 粘贴 `prompt.txt` |
 | **ChatGPT** | 新建 GPT → Instructions → 粘贴 `prompt.txt` |
+
+### 方式三：脚本实跑（确定性产物）
+
+```bash
+python scripts/category-trend-collect.py --input input.json --outdir out
+python scripts/category-trend-collect.py --demo
+```
+
+| 产物 | 内容 |
+|------|------|
+| `out/collect_items.csv` | 结构化条目清单 |
+| `out/collect_summary.json` | 采集统计（机器可读） |
+| `out/collect_report.md` | 采集结果报告 |
 
 ## 边界（不做的事）
 

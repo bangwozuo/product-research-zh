@@ -11,11 +11,11 @@
 | 复杂度 | `S` |
 | 阶段 | `P1` |
 | 复用度 | ★★★★★（所有经营类复用） |
-| 资产形态 | 纯提示词（无运行时依赖） |
+| 资产形态 | 提示词 + Python 确定性脚本（`scripts/profit-calculate.py`，仅标准库） |
 
 ## 能力描述
 
-成本/售价/费率→净利模型
+成本/售价/费率→净利模型：固定拆解顺序（履约成本小计 → 佣金/广告/退货按售价计提 → 单件总成本 → 单件净利 → 净利率 → 月净利），附三档敏感性（广告 +5pp / 售价 -5 元 / 退货 +1pp）。脚本承担计算与落盘；假设说明由模型完成。
 
 ## 输入规格
 
@@ -49,6 +49,19 @@
 | **Dify** | 新建应用 → 提示词编排 → 粘贴 `prompt.txt` |
 | **Claude** | 新建 Project → Instructions → 粘贴 `prompt.txt` |
 | **ChatGPT** | 新建 GPT → Instructions → 粘贴 `prompt.txt` |
+
+### 方式三：脚本实跑（确定性产物）
+
+```bash
+python scripts/profit-calculate.py --input input.json --outdir out
+python scripts/profit-calculate.py --demo
+```
+
+| 产物 | 内容 |
+|------|------|
+| `out/profit_breakdown.csv` | 测算明细 |
+| `out/profit_summary.json` | 机器可读结果（含敏感性） |
+| `out/profit_report.md` | 测算报告 |
 
 ## 边界（不做的事）
 

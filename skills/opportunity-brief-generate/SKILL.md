@@ -11,11 +11,11 @@
 | 复杂度 | `S` |
 | 阶段 | `P1` |
 | 复用度 | ★★★★★（④⑤⑧共用） |
-| 资产形态 | 纯提示词（无运行时依赖） |
+| 资产形态 | 提示词 + Python 确定性脚本（`scripts/opportunity-brief-generate.py`，仅标准库） |
 
 ## 能力描述
 
-数据→结论式周报
+数据→结论式周报：解析周度指标（支持 万/%/元/单 单位），百分比类算 pp 变化、数值类算环比，按固定规则抽取新品贡献与最大正/负变化，产出简报底稿；结论与建议由模型在脚本数值之上撰写。
 
 ## 输入规格
 
@@ -50,6 +50,19 @@
 | **Dify** | 新建应用 → 提示词编排 → 粘贴 `prompt.txt` |
 | **Claude** | 新建 Project → Instructions → 粘贴 `prompt.txt` |
 | **ChatGPT** | 新建 GPT → Instructions → 粘贴 `prompt.txt` |
+
+### 方式三：脚本实跑（确定性产物）
+
+```bash
+python scripts/opportunity-brief-generate.py --input input.json --outdir out
+python scripts/opportunity-brief-generate.py --demo
+```
+
+| 产物 | 内容 |
+|------|------|
+| `out/brief_metrics.csv` | 关键指标表 |
+| `out/brief_summary.json` | 机器可读结果 |
+| `out/brief_report.md` | 简报底稿 |
 
 ## 边界（不做的事）
 

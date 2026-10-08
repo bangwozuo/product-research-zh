@@ -11,11 +11,11 @@
 | 复杂度 | `S` |
 | 阶段 | `P1` |
 | 复用度 | ★★★★☆（⑦共用） |
-| 资产形态 | 纯提示词（无运行时依赖） |
+| 资产形态 | 提示词 + Python 确定性脚本（`scripts/keyword-opportunity-score.py`，仅标准库） |
 
 ## 能力描述
 
-搜索量×竞争度→机会分
+搜索量×竞争度→机会分：按声明维度归一（维度A=min(100,搜索量/700)、维度B=100-竞争度）、加权合成总分（缺省 0.6/0.4）并按阈值（60/45）分层为 A/B/C。脚本承担计算与落盘，口径假设与建议由模型完成。
 
 ## 输入规格
 
@@ -49,6 +49,19 @@
 | **Dify** | 新建应用 → 提示词编排 → 粘贴 `prompt.txt` |
 | **Claude** | 新建 Project → Instructions → 粘贴 `prompt.txt` |
 | **ChatGPT** | 新建 GPT → Instructions → 粘贴 `prompt.txt` |
+
+### 方式三：脚本实跑（确定性产物）
+
+```bash
+python scripts/keyword-opportunity-score.py --input input.json --outdir out
+python scripts/keyword-opportunity-score.py --demo
+```
+
+| 产物 | 内容 |
+|------|------|
+| `out/score_detail.csv` | 评分明细 |
+| `out/score_summary.json` | 机器可读结果 |
+| `out/score_report.md` | 评分报告 |
 
 ## 边界（不做的事）
 

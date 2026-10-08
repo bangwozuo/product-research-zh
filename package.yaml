@@ -1,0 +1,48 @@
+name: 选品分析师
+repo: bangwozuo/product-research-zh
+legacy_name: 选品分析师·小察
+version: 0.2.0
+asset_type: prompt-only
+stage: P1
+complexity: M
+group: 电商小卖家
+runtime_dependencies: none
+api_key_required: false
+demand_ids:
+  - D06
+  - D12
+
+workflows:
+  - name: 类目热词与趋势采集
+    id: de_ecom_06_wf01
+  - name: 竞品上架与价格监控
+    id: de_ecom_06_wf02
+  - name: 蓝海关键词挖掘
+    id: de_ecom_06_wf03
+  - name: 选品打分卡
+    id: de_ecom_06_wf04
+  - name: 周度机会简报
+    id: de_ecom_06_wf05
+
+skills:
+  - id: category-trend-collect
+    name: 类目趋势采集
+    family: 
+  - id: competitor-digest
+    name: 竞品动态摘要
+    family: 
+  - id: keyword-opportunity-score
+    name: 关键词机会评分
+    family: 
+  - id: profit-calculate
+    name: 利润测算
+    family: 
+  - id: opportunity-brief-generate
+    name: 机会简报生成
+    family: 
+
+compliance:
+  ai_label_required: true
+  human_review_required: true
+  forbidden_words_check: true
+  official_api_only: true

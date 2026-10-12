@@ -4,8 +4,7 @@
 
 ![选品分析师 · 动态演示](docs/assets/hero.gif)
 
-*▲ 实时演示（自动循环）· [▶ 观看完整版合集视频](docs/demo.mp4)*
-
+*▲ 真实执行录播（自动循环播放）· [▶ 观看完整版合集视频](docs/demo.mp4)*
 
 [![Stage](https://img.shields.io/badge/stage-P1-orange)](https://github.com/bangwozuo)
 [![Asset](https://img.shields.io/badge/asset-prompt--only-blueviolet)](#资产形态)
@@ -114,10 +113,10 @@ product-research-zh/
 | # | 技能 | 能力族 | 复杂度 | 提示词 | 文档 |
 |---|------|--------|--------|--------|------|
 | 1 | 类目趋势采集 | 数据采集 | `M` | [prompt.txt](skills/category-trend-collect/prompt.txt) | [docs](skills/category-trend-collect/docs/) |
-| 2 | 竞品动态摘要 | 摘要提炼 | `M` | [prompt.txt](skills/competitor-digest/prompt.txt) | [docs](skills/competitor-digest/docs/) |
-| 3 | 关键词机会评分 | — | `S` | [prompt.txt](skills/keyword-opportunity-score/prompt.txt) | [docs](skills/keyword-opportunity-score/docs/) |
-| 4 | 利润测算 | 测算评估 | `S` | [prompt.txt](skills/profit-calculate/prompt.txt) | [docs](skills/profit-calculate/docs/) |
-| 5 | 机会简报生成 | 报告简报 | `S` | [prompt.txt](skills/opportunity-brief-generate/prompt.txt) | [docs](skills/opportunity-brief-generate/docs/) |
+| 2 | 竞品动态摘要 | 摘要与聚类 | `M` | [prompt.txt](skills/competitor-digest/prompt.txt) | [docs](skills/competitor-digest/docs/) |
+| 3 | 关键词机会评分 | 打分与分层 | `S` | [prompt.txt](skills/keyword-opportunity-score/prompt.txt) | [docs](skills/keyword-opportunity-score/docs/) |
+| 4 | 利润测算 | 测算与评估 | `S` | [prompt.txt](skills/profit-calculate/prompt.txt) | [docs](skills/profit-calculate/docs/) |
+| 5 | 机会简报生成 | 报告与简报 | `S` | [prompt.txt](skills/opportunity-brief-generate/prompt.txt) | [docs](skills/opportunity-brief-generate/docs/) |
 
 ## 工作流清单（5 条）
 

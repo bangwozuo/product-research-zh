@@ -110,23 +110,23 @@ product-research-zh/
 
 ## 技能清单（5 个）
 
-| # | 技能 | 能力族 | 复杂度 | 提示词 | 文档 |
-|---|------|--------|--------|--------|------|
-| 1 | 类目趋势采集 | 数据采集 | `M` | [prompt.txt](skills/category-trend-collect/prompt.txt) | [docs](skills/category-trend-collect/docs/) |
-| 2 | 竞品动态摘要 | 摘要与聚类 | `M` | [prompt.txt](skills/competitor-digest/prompt.txt) | [docs](skills/competitor-digest/docs/) |
-| 3 | 关键词机会评分 | 打分与分层 | `S` | [prompt.txt](skills/keyword-opportunity-score/prompt.txt) | [docs](skills/keyword-opportunity-score/docs/) |
-| 4 | 利润测算 | 测算与评估 | `S` | [prompt.txt](skills/profit-calculate/prompt.txt) | [docs](skills/profit-calculate/docs/) |
-| 5 | 机会简报生成 | 报告与简报 | `S` | [prompt.txt](skills/opportunity-brief-generate/prompt.txt) | [docs](skills/opportunity-brief-generate/docs/) |
+| # | 技能 | 能力族 | 复杂度 | 说明文档 |
+|---|------|--------|--------|----------|
+| 1 | 类目趋势采集 | 数据采集 | `M` | [README](skills/category-trend-collect/README.md) |
+| 2 | 竞品动态摘要 | 摘要与聚类 | `M` | [README](skills/competitor-digest/README.md) |
+| 3 | 关键词机会评分 | 打分与分层 | `S` | [README](skills/keyword-opportunity-score/README.md) |
+| 4 | 利润测算 | 测算与评估 | `S` | [README](skills/profit-calculate/README.md) |
+| 5 | 机会简报生成 | 报告与简报 | `S` | [README](skills/opportunity-brief-generate/README.md) |
 
 ## 工作流清单（5 条）
 
-| # | 工作流 | 阶段 | 复杂度 | 触发 | 定义 | 文档 |
-|---|--------|------|--------|------|------|------|
-| 1 | 类目热词与趋势采集 | `P1` | `M` | 定时（每日） | [SKILL.md](workflows/category-hotword-trend-flow/SKILL.md) | [docs](workflows/category-hotword-trend-flow/docs/) |
-| 2 | 竞品上架与价格监控 | `P1` | `M` | 定时（每 2 小时） | [SKILL.md](workflows/competitor-price-monitor-flow/SKILL.md) | [docs](workflows/competitor-price-monitor-flow/docs/) |
-| 3 | 蓝海关键词挖掘 | `P1` | `S` | 定时（每周） | [SKILL.md](workflows/blueocean-keyword-mine-flow/SKILL.md) | [docs](workflows/blueocean-keyword-mine-flow/docs/) |
-| 4 | 选品打分卡 | `P1` | `S` | 人工 | [SKILL.md](workflows/product-scoring-card-flow/SKILL.md) | [docs](workflows/product-scoring-card-flow/docs/) |
-| 5 | 周度机会简报 | `P1` | `S` | 定时（周一） | [SKILL.md](workflows/weekly-opportunity-brief-flow/SKILL.md) | [docs](workflows/weekly-opportunity-brief-flow/docs/) |
+| # | 工作流 | 阶段 | 复杂度 | 触发 | 说明文档 |
+|---|--------|------|--------|------|----------|
+| 1 | 类目热词与趋势采集 | `P1` | `M` | 定时（每日） | [README](workflows/category-hotword-trend-flow/README.md) |
+| 2 | 竞品上架与价格监控 | `P1` | `M` | 定时（每 2 小时） | [README](workflows/competitor-price-monitor-flow/README.md) |
+| 3 | 蓝海关键词挖掘 | `P1` | `S` | 定时（每周） | [README](workflows/blueocean-keyword-mine-flow/README.md) |
+| 4 | 选品打分卡 | `P1` | `S` | 人工 | [README](workflows/product-scoring-card-flow/README.md) |
+| 5 | 周度机会简报 | `P1` | `S` | 定时（周一） | [README](workflows/weekly-opportunity-brief-flow/README.md) |
 
 ---
 
